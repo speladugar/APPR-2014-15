@@ -9,12 +9,12 @@ stripByPath <- function(x, path) {
                     function(y) gsub("^\\s*(.*?)Â?\\s*$", "\\1", xmlValue(y[[1]]))))
 }
 
-uvozi.obcine <- function() {
-  url.obcine <- "http://epp.eurostat.ec.europa.eu/tgm/table.do?tab=table&init=1&plugin=1&language=en&pcode=tps00111"
-  doc.obcine <- htmlTreeParse(url.obcine, useInternalNodes=TRUE)
+uvozi.rodnostEU <- function() {
+  url.rodnostEU <- "http://epp.eurostat.ec.europa.eu/tgm/table.do?tab=table&init=1&plugin=1&language=en&pcode=tps00111"
+  doc.rodnostEU <- htmlTreeParse(url.obcine, useInternalNodes=TRUE)
   
   # Poiščemo vse tabele v dokumentu
-  tabele <- getNodeSet(doc.obcine, "//table")
+  tabele <- getNodeSet(doc.rodnostEU, "//table")
   
   # Iz druge tabele dobimo seznam vrstic (<tr>) neposredno pod
   # trenutnim vozliščem
@@ -33,7 +33,8 @@ uvozi.obcine <- function() {
   
   # Podatke iz matrike spravimo v razpredelnico
   return(
-    data.frame(apply(gsub("[,:]", "", matrika),
-                    2, as.numeric))
+    matrika
     )
 }
+
+RodnostEU <- uvozi.rodnostEU()

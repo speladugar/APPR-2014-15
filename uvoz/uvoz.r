@@ -18,6 +18,7 @@
 # # 2. fazi. Seveda bi morali ustrezno datoteko uvoziti v prihodnjih
 # # fazah.
 
+source("lib/xml.r")
 
 # Funkcija, ki uvozi podatke iz datoteke druzine.csv
 uvoziSLO <- function() {
@@ -35,3 +36,7 @@ uvoziSLO <- function() {
 # Zapišimo podatke v razpredelnico druzine.
 cat("Uvažam podatke o RodnostiSLO...\n")
 RodnostSLO <- uvoziSLO()
+
+cat("Uvažam podatke o RodnostiEU...\n")
+RodnostEU <- data.frame(apply(gsub("^(.*)Â.*", "\\1", gsub("[,:]", "", uvozi.rodnostEU())),
+                 2, as.numeric))
