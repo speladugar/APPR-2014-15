@@ -34,4 +34,7 @@ Liki:  http://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05J2012S&ti=&path=../Data
 
 http://epp.eurostat.ec.europa.eu/tgm/table.do?tab=table&init=1&plugin=1&language=en&pcode=tps00111
 
- 
+UVOZ:
+
+Uvozila sem podatke za obe tabeli in sicer, prvo v csv obliki, drugo pa v html obliki.
+Vsaki tabeli sem dodala tudi graf. Graf za prvo tabelo prikazuje število živorojenih otrok za leto 2013 po regijah. Graf za drugo tabelo pa prikazuje število živorojenih otrok v 28 Evropskih država skupaj, in sicer od leta 2002 do leta 2012.
