@@ -11,7 +11,7 @@ stripByPath <- function(x, path) {
 
 uvozi.rodnostEU <- function() {
   url.rodnostEU <- "http://epp.eurostat.ec.europa.eu/tgm/table.do?tab=table&init=1&plugin=1&language=en&pcode=tps00111"
-  doc.rodnostEU <- htmlTreeParse(url.obcine, useInternalNodes=TRUE)
+  doc.rodnostEU <- htmlTreeParse(url.rodnostEU, useInternalNodes=TRUE)
   
   # Poiščemo vse tabele v dokumentu
   tabele <- getNodeSet(doc.rodnostEU, "//table")
