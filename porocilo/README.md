@@ -1,5 +1,5 @@
 # Poročilo
-
+## 1.FAZA: Izbira teme
 Tukaj bo nastajalo poročilo o vašem projektu.
 
 PREDSTAVITEV TEME:
@@ -34,7 +34,15 @@ Liki:  http://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05J2012S&ti=&path=../Data
 
 http://epp.eurostat.ec.europa.eu/tgm/table.do?tab=table&init=1&plugin=1&language=en&pcode=tps00111
 
-UVOZ:
+## 2.FAZA:Obdelava, uvoz in čiščenje podatkov
 
-Uvozila sem podatke za obe tabeli in sicer, prvo v csv obliki, drugo pa v html obliki.
-Vsaki tabeli sem dodala tudi graf. Graf za prvo tabelo prikazuje število živorojenih otrok za leto 2013 po regijah. Graf za drugo tabelo pa prikazuje število živorojenih otrok v 28 Evropskih država skupaj, in sicer od leta 2002 do leta 2012.
+Uvozila sem 2 tabeli. Prvo tabelo sem dobila iz statističnega urada in jo uvozila v CSV obliki. Drugo tabelo sem dobila iz eurostat-a in jo uvozila kot xml.
+Pri uvozu tabele iz eurostata sem naletela na težavo, in sicer dobila sem tabelo s samimi NA-ji. Problem sem rešila tako, da sem iz tabele pobrala vsa števila, ostalo pa izbrisala. Imena stolpcev(ki so ubistvu kar leta) sem tako podala eksplicitno.
+
+Ko sem uvozila obe tabeli, sem se lotila z risanjem grafov. Najprej sem v mapi slike, ustvarila novo R skripto, v kateri sem v prvi in zadnji vrstici podala ukaze, ki mi uvozijo grafe v pdf obliko. Potem pa sem pričela z risanjem grafov.
+
+Za prvo tabelo sem narisala graf, ki prikazuje število živorojenih otrok po regijah (Pomurska, Podravksa, Koroška, Savinjska, Zasavska, Spodnjeposavska, Jugovzhodna Slovenija, osrednjeslovenska, Gorenjska,Notranjsko-kraška, Gorška inObalno-kraška) za leto 2013. Prvi stolpec pa prikazuje število vseh živorojenih otrok v Sloveniji  v tem letu.
+
+Za drugo tabelo pa sem narisala graf, ki prikazuje število vseh živorojenih otrok v držvah EU(28) in sicer od leta 2002 do leta 2012.
+
+oba grafa sem naredila z ukazom barplot-to se pravi, da sem izbrala stolpični prikaz, saj se mi zdi najbolj primeren in pregleden za prikaz teh podatkov.
