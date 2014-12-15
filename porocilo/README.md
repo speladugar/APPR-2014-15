@@ -30,9 +30,10 @@ Dobljene rezultate bom predstavila tudi na zemljevidu.
 
 PODATKI:
 Podatke za moj projekt sem pridobila na spletni strani Statističnega urada Republike Slovenije (1tabela) in EUROSTAT-a (2tabela). Z namenom, da spoznam več načinov uvoza podatkov v program R bom prvo tabelo uvozila v HTML obliki, drugo tabelo pa v CVS obliki.
-Liki:  http://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05J2012S&ti=&path=../Database/Dem_soc/05_prebivalstvo/30_Rodnost/10_05J20_rojeni_RE_OBC/&lang=2
+Liki:  
+1. http://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=05J2012S&ti=&path=../Database/Dem_soc/05_prebivalstvo/30_Rodnost/10_05J20_rojeni_RE_OBC/&lang=2
 
-http://epp.eurostat.ec.europa.eu/tgm/table.do?tab=table&init=1&plugin=1&language=en&pcode=tps00111
+2. http://epp.eurostat.ec.europa.eu/tgm/table.do?tab=table&init=1&plugin=1&language=en&pcode=tps00111
 
 ## 2.FAZA:Obdelava, uvoz in čiščenje podatkov
 
