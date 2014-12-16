@@ -11,7 +11,9 @@ stripByPath <- function(x, path) {
 
 uvozi.rodnostEU <- function() {
   url.rodnostEU <- "http://epp.eurostat.ec.europa.eu/tgm/table.do?tab=table&init=1&plugin=1&language=en&pcode=tps00111"
-  doc.rodnostEU <- htmlTreeParse(url.rodnostEU, useInternalNodes=TRUE)
+  con <- url(url.rodnostEU)
+  doc.rodnostEU <- htmlTreeParse(readLines(con), useInternalNodes=TRUE)
+  close(con)
   
   # Poiščemo vse tabele v dokumentu
   tabele <- getNodeSet(doc.rodnostEU, "//table")
@@ -29,12 +31,12 @@ uvozi.rodnostEU <- function() {
   
   # Imena stolpcev matrike dobimo iz celic (<th>) glave (prve vrstice) prve tabele
   colnames(matrika) <- gsub("\n", " ", stripByPath(tabele[[4]], ".//th/div"))
-  rownames(matrika) <- gsub("\n", " ", stripByPath(tabele[[5]], ".//th"))
+  imena <- gsub("\n", " ", stripByPath(tabele[[5]], ".//th"))
   
   # Podatke iz matrike spravimo v razpredelnico
   return(
-    matrika
+    data.frame(apply(gsub("[^0-9]", "", matrika),
+                     2, as.numeric), row.names = imena)
     )
 }
 
-RodnostEU <- uvozi.rodnostEU()
