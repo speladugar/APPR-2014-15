@@ -40,5 +40,6 @@ pdf("slike/povprecna_druzina.pdf", width=6, height=4)
 n = 100
 barve =topo.colors(n)[unlist(1+(n-1)*norm.2013)]
 plot(slo, col = barve)
-
+text(coordinates(slo),labels=as.character(slo$NAME_1), cex=0.3)
+title("Rodnost v Sloveniji za leto 2013")
 dev.off()
