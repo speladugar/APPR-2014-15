@@ -6,7 +6,9 @@ library(XML)
 # iz vozlišč, ki ustrezajo podani poti.
 stripByPath <- function(x, path) {
   unlist(xpathApply(x, path,
-                    function(y) gsub("^\\s*(.*?)Â?\\s*$", "\\1", xmlValue(y[[1]]))))
+                    function(y) gsub("^\\s*(.*?)\\s*$", "\\1",
+                                gsub("[^[:alnum:] (),]", "",
+                                     xmlValue(y)))))
 }
 
 uvozi.rodnostEU <- function() {

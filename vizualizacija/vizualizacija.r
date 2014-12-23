@@ -76,3 +76,33 @@ plot(slo, col = barve, bg="pink")
 text(coordinates(slo),labels=imena1, cex=0.3)
 title("Rodnost v Sloveniji za leto 2013")
 
+#2ZEMLJEVID Evropa
+# Uvozimo zemljevid.
+cat("Uvažam zemljevid sveta...\n")
+svet <- uvozi.zemljevid("http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip",
+                        "Europa", "ne_110m_admin_0_countries.shp", mapa = "zemljevid",
+                        encoding = "Windows-1250")
+#EU <- svet[svet$name %in% rownames(RodnostEU),]
+
+#Dodamo mankajoče države
+rownames(RodnostEU)[39] <- "Macedonia"
+rownames(RodnostEU)[46] <- "Kosovo"
+rownames(RodnostEU)[49] <- "Russian Federation"
+manjkajoce.drzave <- c() #c("Albania", "Belarus", "Moldova", "Russian Federation", "Ukraine")
+drzave <- c(rownames(RodnostEU), manjkajoce.drzave)
+drzave <- drzave[drzave %in% svet$name_long]
+EU <- svet[svet$name_long %in% drzave,]
+
+# Preuredimo podatke, da jih bomo lahko izrisali na zemljevid.
+manjkajo <- ! manjkajoce.drzave %in% rownames(RodnostEU)
+M <- as.data.frame(matrix(nrow=sum(manjkajo), ncol=length(RodnostEU)))
+names(M) <- names(RodnostEU)
+row.names(M) <- manjkajoce.drzave[manjkajo]
+eRodnostEU <- rbind(RodnostEU, M)[as.character(EU$name_long),]
+
+pdf("slike/EU.pdf")
+EU$Rodnost2013 <- eRodnostEU[, 12]
+print(spplot(EU, "Rodnost2013", xlim=c(-25, 40), ylim=c(33, 73),
+             main = "Rodnost v EU za leto 2013",
+             col.regions = topo.colors(100)))
+dev.off()
