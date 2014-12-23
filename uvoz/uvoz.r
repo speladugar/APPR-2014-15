@@ -38,5 +38,4 @@ cat("Uvažam podatke o RodnostiSLO...\n")
 RodnostSLO <- uvoziSLO()
 
 cat("Uvažam podatke o RodnostiEU...\n")
-RodnostEU <- data.frame(apply(gsub("^(.*)Â.*", "\\1", gsub("[,:]", "", uvozi.rodnostEU())),
-                 2, as.numeric))
+RodnostEU <- uvozi.rodnostEU()
