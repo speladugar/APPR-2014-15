@@ -47,3 +47,11 @@ Za prvo tabelo sem narisala graf, ki prikazuje število živorojenih otrok po re
 Za drugo tabelo pa sem narisala graf, ki prikazuje število vseh živorojenih otrok v držvah EU(28) in sicer od leta 2002 do leta 2012.
 
 oba grafa sem naredila z ukazom barplot-to se pravi, da sem izbrala stolpični prikaz, saj se mi zdi najbolj primeren in pregleden za prikaz teh podatkov.
+
+## 3.FAZA: Analiza in vizualizacija podatkov
+
+V tej fazi sem se najprej odločila, katere zemljevide bom vključila v projekt. Glede na to, da imam podatke o številu živorojenih otrok tako za Slovenijo kot tudi za države članice Evropske Unije, sem uvozila zemljevid od Slovenije in Evrope.
+
+ZEMLJEVID SLOVENIJE prikazuje število živorojenih otrok po regijah za leto 2013. Iz Zemljevida lahko vidimo, da je največ rojstev v letu 2013 bilo v Osrednjeslovenski regiji, sledijo ji Podravska, Savinjska in Gorenjska. Najmanj rojstev pa je bilo v Zasavskem. Zdi se smiselno, saj je v osrednji Sloveniji tudi največ prebivalcev, najmanj pa jih je v Zasavskem in posledično je zato tudi tu najmanj rojstev.
+
+ZEMLJEVID EVROPE prikazuje število živorojenih otrok za leto 2013 za posamezne države. Iz zemljevida razberemo, da ima daleč največ rojstev Turčija, potem pa ji sledijo Francija, Zruženo kraljestvo, Nemčija, Italija in Ukrajina. Čeprav iz zemljevida ni najbolj razvidno, pa ima najmanj rojstev Lihtenštajn. Slovenija je v porpečju z večino Evropskih držav.
