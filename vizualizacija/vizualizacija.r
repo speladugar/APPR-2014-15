@@ -47,7 +47,7 @@ imena1 <- as.character(slo$NAME_1)
 rownames(koordinate1) <- imena1
 names(imena1) <- imena1
 
-koordinate1["Obalno-kraška",1] <- koordinate1["Obalno-kraška",1]+0.1 #levo,desno
+koordinate1["Obalno-kraška",1] <- koordinate1["Obalno-kraška",1]+0.5 #levo,desno
 koordinate1["Obalno-kraška",2] <- koordinate1["Obalno-kraška",2]+0.025 #dol,gor
 koordinate1["Zasavska",2] <- koordinate1["Zasavska",2]+0.01
 koordinate1["Spodnjeposavska",1] <- koordinate1["Spodnjeposavska",1]+0.9
@@ -67,14 +67,26 @@ norm.2013 <- (zRodnostSLO[,4]-min.2013)/(max.2013-min.2013)
 
 n = 100
 #barve =rgb(1, 0, 0, norm.2013)
-barve =rgb(1, 1, (n:1)/n)[unlist(1+(n-1)*norm.2013)]
-plot(slo, col = barve, bg="pink")
+# barve =rgb(1, 1, (n:1)/n)[unlist(1+(n-1)*norm.2013)]
+# plot(slo, col = barve, bg="pink")
 
 #slo$rodnost2013 <- zRodnostSLO[,4]
 #spplot(slo, "rodnost2013", col = topo.colors(100), main = "Rodnost v Sloveniji za leto 2013")
 
+
+n <- 100
+barve <- rgb(1, 1, (n:1)/n)
+plot(slo, col = barve[unlist(1+(n-1)*norm.2013)], bg="pink", main="ROdnost v Sloveniji za leto 2013")
+
+k <- 5 # število stopenj v legendi
+stopnje <- seq(min.2013, max.2013, (max.2013-min.2013)/(k-1))
+legend("bottomright", legend = round(stopnje),
+       fill = barve[seq(1, n, (n-1)/(k-1))], bg = "white")
+
 text(coordinates(slo),labels=imena1, cex=0.3)
 title("Rodnost v Sloveniji za leto 2013")
+
+dev.off()
 
 #2ZEMLJEVID Evropa
 # Uvozimo zemljevid.
@@ -111,8 +123,16 @@ koordinate["Sweden",1]<-koordinate["Sweden", 1]-1
 
 pdf("slike/EU.pdf")
 EU$Rodnost2013 <- eRodnostEU[, 12]
+
+
+rot <- ifelse(imena.drzav %in% c("Albania", "Portugal"), 90, 0)
 print(spplot(EU, "Rodnost2013", xlim=c(-25, 40), ylim=c(33, 73),
              main = "Rodnost v EU za leto 2013",
              col.regions = topo.colors(100),
-             sp.layout = (list(list("sp.text", koordinate, imena.drzav, cex = 0.4)))))
+             sp.layout = (list(list("sp.text", koordinate, imena.drzav,
+                                    cex = 0.4, srt = rot)))))
+
+
+
+
 dev.off()
