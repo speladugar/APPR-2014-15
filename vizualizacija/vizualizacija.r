@@ -47,10 +47,10 @@ imena1 <- as.character(slo$NAME_1)
 rownames(koordinate1) <- imena1
 names(imena1) <- imena1
 
-koordinate1["Obalno-kraška",1] <- koordinate1["Obalno-kraška",1]+0.5 #levo,desno
+koordinate1["Obalno-kraška",1] <- koordinate1["Obalno-kraška",1]+0.1 #levo,desno
 koordinate1["Obalno-kraška",2] <- koordinate1["Obalno-kraška",2]+0.025 #dol,gor
 koordinate1["Zasavska",2] <- koordinate1["Zasavska",2]+0.01
-koordinate1["Spodnjeposavska",1] <- koordinate1["Spodnjeposavska",1]+0.9
+koordinate1["Spodnjeposavska",1] <- koordinate1["Spodnjeposavska",1]
 koordinate1["Spodnjeposavska",2] <- koordinate1["Spodnjeposavska",2]
 imena1["Jugovzhodna Slovenija"] <- "Jugovzhodna\nSlovenija"
 imena1["Notranjsko-kraška"] <- "Notranjsko-\nkraška"
@@ -83,7 +83,7 @@ stopnje <- seq(min.2013, max.2013, (max.2013-min.2013)/(k-1))
 legend("bottomright", legend = round(stopnje),
        fill = barve[seq(1, n, (n-1)/(k-1))], bg = "white")
 
-text(coordinates(slo),labels=imena1, cex=0.3)
+text(koordinate1,labels=imena1, cex=0.3)
 title("Rodnost v Sloveniji za leto 2013")
 
 dev.off()
@@ -114,14 +114,23 @@ eRodnostEU <- rbind(RodnostEU, M)[as.character(EU$name_long),]
 
 
 koordinate <- coordinates(EU[!is.na(eRodnostEU[, 12]),])
-imena.drzav <- EU$name[!is.na(eRodnostEU[, 12])]
+imena.drzav <- as.character(EU$name[!is.na(eRodnostEU[, 12])])
+names(imena.drzav) <- imena.drzav
 rownames(koordinate) <- imena.drzav
 koordinate["Norway",1] <- koordinate["Norway",1]-1.8
 koordinate["Croatia", 2]<- koordinate["Croatia",2]+0.7
+koordinate["Croatia", 1]<- koordinate["Croatia",1]+0.2
+
 koordinate["Greece", 1]<- koordinate["Greece", 1]-0.4
 koordinate["Sweden",1]<-koordinate["Sweden", 1]-1
+koordinate["Austria",1]<-koordinate["Austria", 1]+0.8
+koordinate["United Kingdom",2]<-koordinate["United Kingdom",2]-1
+koordinate["United Kingdom",1]<-koordinate["United Kingdom",1]+0.5
+
+imena.drzav["Bosnia and Herz."] <- "BiH"
 
 pdf("slike/EU.pdf")
+
 EU$Rodnost2013 <- eRodnostEU[, 12]
 
 
