@@ -115,6 +115,7 @@ eRodnostEU <- rbind(RodnostEU, M)[as.character(EU$name_long),]
 
 koordinate <- coordinates(EU[!is.na(eRodnostEU[, 12]),])
 imena.drzav <- as.character(EU$name[!is.na(eRodnostEU[, 12])])
+
 names(imena.drzav) <- imena.drzav
 rownames(koordinate) <- imena.drzav
 koordinate["Norway",1] <- koordinate["Norway",1]-1.8
@@ -128,6 +129,9 @@ koordinate["United Kingdom",2]<-koordinate["United Kingdom",2]-1
 koordinate["United Kingdom",1]<-koordinate["United Kingdom",1]+0.5
 
 imena.drzav["Bosnia and Herz."] <- "BiH"
+imena.drzav["Luxembourg"]<- "Lux"
+imena.drzav["Montenegro"]<-"Mont"
+
 
 pdf("slike/EU.pdf")
 
@@ -139,7 +143,7 @@ print(spplot(EU, "Rodnost2013", xlim=c(-25, 40), ylim=c(33, 73),
              main = "Rodnost v EU za leto 2013",
              col.regions = topo.colors(100),
              sp.layout = (list(list("sp.text", koordinate, imena.drzav,
-                                    cex = 0.4, srt = rot)))))
+                                    cex = 0.3, srt = rot)))))
 
 
 
