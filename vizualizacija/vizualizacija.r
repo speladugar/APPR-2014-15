@@ -122,17 +122,20 @@ koordinate["Norway",1] <- koordinate["Norway",1]-1.8
 koordinate["Croatia", 2]<- koordinate["Croatia",2]+0.7
 koordinate["Croatia", 1]<- koordinate["Croatia",1]+0.2
 
-koordinate["Greece", 1]<- koordinate["Greece", 1]-0.4
+koordinate["Greece", 1]<- koordinate["Greece", 1]-0.6
 koordinate["Sweden",1]<-koordinate["Sweden", 1]-1
 koordinate["Austria",1]<-koordinate["Austria", 1]+0.8
 koordinate["United Kingdom",2]<-koordinate["United Kingdom",2]-1
 koordinate["United Kingdom",1]<-koordinate["United Kingdom",1]+0.5
+koordinate["Cyprus",2]<-koordinate["Cyprus",2]-0.6
 
 imena.drzav["Bosnia and Herz."] <- "BiH"
 imena.drzav["Luxembourg"]<- "Lux"
 imena.drzav["Montenegro"]<-"Mont"
-
-
+imena.drzav["Slovenia"]<-"SLO"
+imena.drzav["Croatia"]<-"HR"
+imena.drzav["Macedonia"]<-"Mac"
+imena.drzav["Albania"]<-"Alb"
 pdf("slike/EU.pdf")
 
 EU$Rodnost2013 <- eRodnostEU[, 12]
@@ -143,7 +146,7 @@ print(spplot(EU, "Rodnost2013", xlim=c(-25, 40), ylim=c(33, 73),
              main = "Rodnost v EU za leto 2013",
              col.regions = topo.colors(100),
              sp.layout = (list(list("sp.text", koordinate, imena.drzav,
-                                    cex = 0.3, srt = rot)))))
+                                    cex = 0.3, srt = rot,col="darkgrey")))))
 
 
 
