@@ -136,6 +136,7 @@ imena.drzav["Slovenia"]<-"SLO"
 imena.drzav["Croatia"]<-"HR"
 imena.drzav["Macedonia"]<-"Mac"
 imena.drzav["Albania"]<-"Alb"
+
 pdf("slike/EU.pdf")
 
 EU$Rodnost2013 <- eRodnostEU[, 12]
@@ -144,9 +145,9 @@ EU$Rodnost2013 <- eRodnostEU[, 12]
 rot <- ifelse(imena.drzav %in% c("Albania", "Portugal"), 90, 0)
 print(spplot(EU, "Rodnost2013", xlim=c(-25, 40), ylim=c(33, 73),
              main = "Rodnost v EU za leto 2013",
-             col.regions = topo.colors(100),
+             col.regions = topo.colors(100),col="darkgrey",
              sp.layout = (list(list("sp.text", koordinate, imena.drzav,
-                                    cex = 0.3, srt = rot,col="darkgrey")))))
+                                    cex = 0.3, srt = rot)))))
 
 
 
