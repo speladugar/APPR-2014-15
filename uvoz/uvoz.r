@@ -39,3 +39,15 @@ RodnostSLO <- uvoziSLO()
 
 cat("Uvažam podatke o RodnostiEU...\n")
 RodnostEU <- uvozi.rodnostEU()
+
+#UVOZ tabele StopnjaRodnosti
+source("lib/xml.r")
+
+uvoziSLO1 <- function() {
+  return(read.table("podatki/StopnjaRodnosti.csv", sep = ";", as.is = TRUE, header = TRUE,
+                    
+                    fileEncoding = "Windows-1250"))
+}
+
+cat("Uvažam podatke o StopnjaRodnosti...\n")
+StopnjaRodnosti<-uvoziSLO1()
