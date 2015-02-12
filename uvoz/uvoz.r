@@ -40,14 +40,51 @@ RodnostSLO <- uvoziSLO()
 cat("Uvažam podatke o RodnostiEU...\n")
 RodnostEU <- uvozi.rodnostEU()
 
-#UVOZ tabele StopnjaRodnosti
+# #UVOZ tabele StopnjaRodnosti
+# source("lib/xml.r")
+# 
+# uvoziSLO1 <- function() {
+#   return(read.table("podatki/StopnjaRodnosti.csv", sep = ";", as.is = TRUE, header = TRUE,
+#                     
+#                     fileEncoding = "Windows-1250"))
+# }
+# 
+# cat("Uvažam podatke o StopnjaRodnosti...\n")
+# StopnjaRodnosti<-uvoziSLO1()
+
+#Uvoz tabele POPULACIJA
+source("lib/xml.r")
+ 
+uvoziPopulacija <- function() {
+   return(read.table("podatki/PopulacijaEU.csv", sep = ";", as.is = TRUE, header = TRUE,
+                     
+                     fileEncoding = "Windows-1250"))
+ }
+ 
+ cat("Uvažam podatke o Populacija...\n")
+Populacija<-uvoziPopulacija()
+
+#Uvoz tabele SPREMEMBA
 source("lib/xml.r")
 
-uvoziSLO1 <- function() {
-  return(read.table("podatki/StopnjaRodnosti.csv", sep = ";", as.is = TRUE, header = TRUE,
+uvoziSprememba <- function() {
+  return(read.table("podatki/Sprememba.csv", sep = ";", as.is = TRUE, header = TRUE,
                     
                     fileEncoding = "Windows-1250"))
 }
 
-cat("Uvažam podatke o StopnjaRodnosti...\n")
-StopnjaRodnosti<-uvoziSLO1()
+cat("Uvažam podatke o Sprememba...\n")
+Sprememba<-uvoziSprememba()
+
+#Uvoz tablele ROJSTVO_SMRTNOST
+source("lib/xml.r")
+
+uvoziRojstvo_smrtnost <- function() {
+  return(read.table("podatki/Rojstvo_smrtnost.csv", sep = ";", as.is = TRUE, header = TRUE,
+                    
+                    fileEncoding = "Windows-1250"))
+}
+
+cat("Uvažam podatke o Rojstvo_smrtnost...\n")
+Rojstvo_smrtnost<-uvoziRojstvo_smrtnost()
+

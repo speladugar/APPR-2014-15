@@ -17,70 +17,89 @@
 # dev.off()
 
 
-pdf("slike/Prvo_rojstvo_regije.pdf")
-#OSREDNJESLOVENSKA
-#pairs(RodnostSLO[3:17])
-osrednjeslovenska <- RodnostSLO[RodnostSLO$Regija == "Osrednjeslovenska",]
+# pdf("slike/Prvo_rojstvo_regije.pdf")
+# #OSREDNJESLOVENSKA
+# #pairs(RodnostSLO[3:17])
+# osrednjeslovenska <- RodnostSLO[RodnostSLO$Regija == "Osrednjeslovenska",]
+# 
+# #plot(osr$Leto, osr$Prvo.rojstvo)
+# #plot(RodnostSLO$Leto, RodnostSLO$Prvo.rojstvo)
+# plot(osr$Leto, osr$Prvo.rojstvo)
+# title("Prvo rojstvo-OSREDJESLOVENSKA")
+# 
+# #POMURSKA
+# pomurska<-RodnostSLO[RodnostSLO$Regija=="Pomurska",]
+# plot(pomurska$Leto, pomurska$Prvo.rojstvo)
+# title("Prvo rojstvo-POMURSKA")
+# 
+# #PODRAVSKA
+# podravska<-RodnostSLO[RodnostSLO$Regija=="Podravska",]
+# plot(podravska$Leto, podravska$Prvo.rojstvo)
+# title("Prvo rojstvo-PODRAVSKA")
+# 
+# #KOROŠKA
+# koroška<-RodnostSLO[RodnostSLO$Regija=="Koroška",]
+# plot(koroška$Leto, koroška$Prvo.rojstvo)
+# title("Prvo rojstvo-KOROŠKA")
+# 
+# #SAVINJSKA
+# savinjska<-RodnostSLO[RodnostSLO$Regija=="Savinjska",]
+# plot(savinjska$Leto, savinjska$Prvo.rojstvo)
+# title("Prvo rojstvo-SAVINJSKA")
+# 
+# #ZASAVSKA
+# zasavska<-RodnostSLO[RodnostSLO$Regija=="Zasavska",]
+# plot(zasavska$Leto, zasavska$Prvo.rojstvo)
+# title("Prvo rojstvo-ZASAVSKA")
+# 
+# 
+# #SPODNJEPOSAVSKA
+# spodnjeposavska<-RodnostSLO[RodnostSLO$Regija=="Spodnjeposavska",]
+# plot(spodnjeposavska$Leto, spodnjeposavska$Prvo.rojstvo)
+# title("Prvo rojstvo-SPODNJEPOSAVSKA")
+# 
+# #JUGOVZHODNA SLOVENIJA
+# JVslovenija<-RodnostSLO[RodnostSLO$Regija=="Jugovzhodna Slovenija",]
+# plot(JVslovenija$Leto, JVslovenija$Prvo.rojstvo)
+# title("Prvo rojstvo-JUGOVZHODNA SLOVENIJA")
+# 
+# #GORENJSKA
+# gorenjska<-RodnostSLO[RodnostSLO$Regija=="Gorenjska",]
+# plot(gorenjska$Leto, gorenjska$Prvo.rojstvo)
+# title("Prvo rojstvo-GORENJSKA")
+# 
+# #NOTRANJSKO KRAŠKA
+# notranjskokraška<-RodnostSLO[RodnostSLO$Regija=="Notranjsko-kraška",]
+# plot(notranjskokraška$Leto, notranjskokraška$Prvo.rojstvo)
+# title("Prvo rojstvo-NOTRANJSKO KRAŠKA")
+# 
+# #GORIŠKA
+# goriška<-RodnostSLO[RodnostSLO$Regija=="Goriška",]
+# plot(goriška$Leto, goriška$Prvo.rojstvo)
+# title("Prvo rojstvo-GORIŠKA")
+# 
+# #OBALNO-KRAŠKA
+# obalnokraška<-RodnostSLO[RodnostSLO$Regija=="Obalno-kraška",]
+# plot(obalnokraška$Leto, obalnokraška$Prvo.rojstvo)
+# title("Prvo rojstvo-OBALNO-KRAŠKA")
+# 
+# dev.off()
 
-#plot(osr$Leto, osr$Prvo.rojstvo)
-#plot(RodnostSLO$Leto, RodnostSLO$Prvo.rojstvo)
-plot(osr$Leto, osr$Prvo.rojstvo)
-title("Prvo rojstvo-OSREDJESLOVENSKA")
+#Graf POPULACIJA
 
-#POMURSKA
-pomurska<-RodnostSLO[RodnostSLO$Regija=="Pomurska",]
-plot(pomurska$Leto, pomurska$Prvo.rojstvo)
-title("Prvo rojstvo-POMURSKA")
+yp<-Populacija[1:54, 2]
+plot(Populacija[1:54, 1], yp, ylab="populacija",xlab="leto", main="Populacija v EU",col="blue", type="l" )
 
-#PODRAVSKA
-podravska<-RodnostSLO[RodnostSLO$Regija=="Podravska",]
-plot(podravska$Leto, podravska$Prvo.rojstvo)
-title("Prvo rojstvo-PODRAVSKA")
+#Graf SPREMEMBA
 
-#KOROŠKA
-koroška<-RodnostSLO[RodnostSLO$Regija=="Koroška",]
-plot(koroška$Leto, koroška$Prvo.rojstvo)
-title("Prvo rojstvo-KOROŠKA")
+z<-Sprememba[1:53, 4]
+plot(Sprememba[1:53, 1], z, type="l", xlab="leta", ylab="celotna sprememba", main="Sprememba populacije EU",col="lightblue")
 
-#SAVINJSKA
-savinjska<-RodnostSLO[RodnostSLO$Regija=="Savinjska",]
-plot(savinjska$Leto, savinjska$Prvo.rojstvo)
-title("Prvo rojstvo-SAVINJSKA")
+y<-Sprememba[1:53, 3]
+lines(Sprememba[1:53, 1], y,type="l", col="blue")
 
-#ZASAVSKA
-zasavska<-RodnostSLO[RodnostSLO$Regija=="Zasavska",]
-plot(zasavska$Leto, zasavska$Prvo.rojstvo)
-title("Prvo rojstvo-ZASAVSKA")
+x<-Sprememba[1:53, 2]
+lines(Sprememba[1:53, 1], x, type="l", col="orange")
 
+#Graf ROJSTVO_SMRTNOST
 
-#SPODNJEPOSAVSKA
-spodnjeposavska<-RodnostSLO[RodnostSLO$Regija=="Spodnjeposavska",]
-plot(spodnjeposavska$Leto, spodnjeposavska$Prvo.rojstvo)
-title("Prvo rojstvo-SPODNJEPOSAVSKA")
-
-#JUGOVZHODNA SLOVENIJA
-JVslovenija<-RodnostSLO[RodnostSLO$Regija=="Jugovzhodna Slovenija",]
-plot(JVslovenija$Leto, JVslovenija$Prvo.rojstvo)
-title("Prvo rojstvo-JUGOVZHODNA SLOVENIJA")
-
-#GORENJSKA
-gorenjska<-RodnostSLO[RodnostSLO$Regija=="Gorenjska",]
-plot(gorenjska$Leto, gorenjska$Prvo.rojstvo)
-title("Prvo rojstvo-GORENJSKA")
-
-#NOTRANJSKO KRAŠKA
-notranjskokraška<-RodnostSLO[RodnostSLO$Regija=="Notranjsko-kraška",]
-plot(notranjskokraška$Leto, notranjskokraška$Prvo.rojstvo)
-title("Prvo rojstvo-NOTRANJSKO KRAŠKA")
-
-#GORIŠKA
-goriška<-RodnostSLO[RodnostSLO$Regija=="Goriška",]
-plot(goriška$Leto, goriška$Prvo.rojstvo)
-title("Prvo rojstvo-GORIŠKA")
-
-#OBALNO-KRAŠKA
-obalnokraška<-RodnostSLO[RodnostSLO$Regija=="Obalno-kraška",]
-plot(obalnokraška$Leto, obalnokraška$Prvo.rojstvo)
-title("Prvo rojstvo-OBALNO-KRAŠKA")
-
-dev.off()
