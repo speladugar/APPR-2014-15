@@ -88,12 +88,12 @@
 #Graf POPULACIJA
 
 yp<-Populacija[1:54, 2]
-plot(Populacija[1:54, 1], yp, ylab="populacija",xlab="leto", main="Populacija v EU",col="blue", type="l" )
+plot(Populacija[1:54, 1], yp, ylab="število prebivalcev v milijonih",xlab="leto", main="Populacija v EU(28)",col="blue", type="l" )
 
 #Graf SPREMEMBA
 
 z<-Sprememba[1:53, 4]
-plot(Sprememba[1:53, 1], z, type="l", xlab="leta", ylab="celotna sprememba", main="Sprememba populacije EU",col="lightblue")
+plot(Sprememba[1:53, 1], z,ylim=c(-4,10), type="l", xlab="leta", ylab="celotna sprememba", main="Sprememba populacije EU",col="lightblue")
 
 y<-Sprememba[1:53, 3]
 lines(Sprememba[1:53, 1], y,type="l", col="blue")
@@ -102,4 +102,10 @@ x<-Sprememba[1:53, 2]
 lines(Sprememba[1:53, 1], x, type="l", col="orange")
 
 #Graf ROJSTVO_SMRTNOST
+r<-Rojstvo_smrtnost[1:53,2]
+plot(Rojstvo_smrtnost[1:53, 1],ylim=c(3,8), r, type="l", col="orange", xlab="leta", ylab="število v milijonih", main="Število živorojenih in umrlih EU(28)")
+p<- Rojstvo_smrtnost[1:53, 3]
+lines(Rojstvo_smrtnost[1:53,1], p, type="l", col="blue")
 
+#Graf Naravni_prirastek_migracije
+barplot(prirastek_migracije[1:36, 2], names.arg=prirastek_migracije[1:36,1],las=2,ylim=c(-200, 1000), xlab="imena držav", ylab="število v tisočih", main="Naravni prirastek in neto migracije za EU", cex.names=0.45, col="pink")

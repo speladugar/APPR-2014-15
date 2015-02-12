@@ -88,3 +88,26 @@ uvoziRojstvo_smrtnost <- function() {
 cat("Uvažam podatke o Rojstvo_smrtnost...\n")
 Rojstvo_smrtnost<-uvoziRojstvo_smrtnost()
 
+#Uvoz tabele NARAVNI_PRIRASTEK_MIGRACIJE:
+source("lib/xml.r")
+
+uvoziprirastek_migracije <- function() {
+  return(read.table("podatki/Naravni_prirastek_migracije.csv", sep = ";", as.is = TRUE, header = TRUE,
+                    
+                    fileEncoding = "Windows-1250"))
+}
+
+cat("Uvažam podatke o prirastek_migracije...\n")
+prirastek_migracije<-uvoziprirastek_migracije()
+
+#Uvoz RODNOST_SMRTNOST_SLO
+source("lib/xml.r")
+
+uvoziRodnost_smrtnost_SLO <- function() {
+  return(read.table("podatki/Rodnost_smrtnost_SLO.csv", sep = ";", as.is = TRUE, header = TRUE,
+                    
+                    fileEncoding = "Windows-1250"))
+}
+
+cat("Uvažam podatke o Rodnost_smrtnost_SLO...\n")
+Rodnost_smrtnost_SLO<-uvoziRodnost_smrtnost_SLO()
