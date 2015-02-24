@@ -118,3 +118,4 @@ slovenija<-RodnostSLO[RodnostSLO$Regija=="SLOVENIJA",]
 plot(slovenija$Leto, slovenija$Vrstni.red.rojstva...SKUPAJ, xlab="Leto", ylab="število živorojenih v tisočih")
 title("Število živorojenih otrok v Sloveniji po letih od 2002-2013")
 
+
