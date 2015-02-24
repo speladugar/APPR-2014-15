@@ -100,6 +100,9 @@ lines(Sprememba[1:53, 1], y,type="l", col="blue")
 
 x<-Sprememba[1:53, 2]
 lines(Sprememba[1:53, 1], x, type="l", col="orange")
+legend("topright", col = c("orange", "lightblue", "blue"), lty = "solid", cex = 0.5,
+       legend = c("Celotna sprememba", "Naravni prirastek", "Neto migracije"))
+abline(h = 0, col = "gray", lty = "dashed")
 
 #Graf ROJSTVO_SMRTNOST
 r<-Rojstvo_smrtnost[1:53,2]
@@ -108,4 +111,10 @@ p<- Rojstvo_smrtnost[1:53, 3]
 lines(Rojstvo_smrtnost[1:53,1], p, type="l", col="blue")
 
 #Graf Naravni_prirastek_migracije
-barplot(prirastek_migracije[1:36, 2], names.arg=prirastek_migracije[1:36,1],las=2,ylim=c(-200, 1000), xlab="imena držav", ylab="število v tisočih", main="Naravni prirastek in neto migracije za EU", cex.names=0.45, col="pink")
+barplot(prirastek_migracije[2:36, 2], names.arg=prirastek_migracije[2:36,1],las=2,ylim=c(-70, 70), xlab="imena držav", ylab="število v tisočih", main="Naravni prirastek in neto migracije za EU", cex.names=0.45, col="pink")
+
+#SLOVENIJA
+slovenija<-RodnostSLO[RodnostSLO$Regija=="SLOVENIJA",]
+plot(slovenija$Leto, slovenija$Vrstni.red.rojstva...SKUPAJ, xlab="Leto", ylab="število živorojenih v tisočih")
+title("Število živorojenih otrok v Sloveniji po letih od 2002-2013")
+
