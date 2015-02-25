@@ -93,13 +93,62 @@ ZEMLJEVID EVROPE prikazuje število živorojenih otrok za leto 2013 za posamezne
 \includegraphics[width=1.2\textwidth]{../slike/EU.pdf}
 }
 
+\newpage
 
-% \section{Analiza in vizualizacija podatkov}
-% 
-% \includegraphics{../slike/povprecna_druzina.pdf}
-% 
-% \section{Napredna analiza podatkov}
-% 
+ 
+\section{Napredna analiza podatkov}
+
+
+Za začetek naj obnovim, kaj sem ugotovila v prvih treh razah. Torej, v letu 2013 je bilo največ rojstev v Osrednjeslovenski regiji, sledijo ji Podravska, Savinjska in Gorenjska, najmanj rojstev pa je bilo  v Zasavskem, to je razvidno iz grafa:Rodnost v SLO po regijah za leto 2013 ter iz zemljevida:Rodnost v Sloveniji za leto 2013.
+Poleg tega pa se ugotovila, da je bilo največ rojstev v državah članicah EU skupaj leta 2008.
+Na zemljevidu Evrope pa sem za vsako državo prikazala število živorojenih otrok v letu 2013 iz katerega je razvidno da je imela daleč največ rojstev Turčija, sledijo pa ji Francija, Združeno kraljestvo, Nemčija, Italija in Ukrajina.
+
+V četrti fazi sem se odločila, da za posamezno državo EU naredim podrobnejšo analizo glede spremembe števila prebivalstva, kjer prebivalstvo raste oz pada bodisi zaradi naravnega prirastka (stopnja rodnosti-stopnja smrtnosti) bodisi neto migracij (št.priseljenih-št.odseljenih) in tako razvrstiti države v skupine glede na to, ali prebivalstvo v posamezni državi pada ali raste in kaj je vzrok naraščanja oz padanja prebivalstva-naravni prirastek ali neto mgracije.
+Poleg tega pa narediti še napoved glede števila živorojenih otrok za Slovenijo do leta 2020.
+
+Vse potrebne podatke za 4.fazo sem našla na spletni strani Eurostata in sicer:
+\begin{enumerate}
+\item{\url{http://ec.europa.eu/eurostat/statistics-explained/index.php/Population_and_population_change_statistics}}
+\end{enumerate}
+
+Nato sem posamezne tabele uvozila v CVS obliki.
+\newpage
+Na samem začetku me je zanimalo kako se je v Evropi število prebivalstva spreminjalo skozi čas.
+Podatke za prvi graf sem vzela iz tabela POPULACIJA.
+Prvi graf tako prikazuje gibanje prebivalstva od leta 1960 do leta 2012 in iz njega je lepo razvidno, da je prebivasltvo skozi vsa ta leta naraščalo in lahko pričakujemo, da bo tudi v prihodnje. 
+
+\makebox[\textwidth][c]{
+\includegraphics[width=1.5\textwidth]{../slike/Populacija.pdf}
+}
+
+
+Potem pa me je zanimo, kaj je vzrok za naraščanje prebivastva, visok naravni prirastek ali neto migracije (2graf).
+
+\newpage
+
+Podatke za drugi graf sem vzela iz tabele SPREMEMBA.
+Na drugem grafu je prikazana sprememba rasti prebivalstva po letih (rumena krivulja), vidimo da je sprememba, kjub manjšim nihanjem, vedno pozitivna-torej prebivastvo je skozi vsa leta naraščalo. Svetlo modra krivulja prikazuje spremembo naravnega prirastka med leti, temno modra krivulja pa prikzuje spremembo neto migracij. Iz grafa je tako razvidno, da bil do leta 1992 glavni vzrok za rast prebivalsta naravni prirastek, po letu 1992 pa se zgodi preobrat, vidimo da od tega leta dalje je prebivastvo v Evropi naraščalo bolj zaradi neto migracij kot pa naravnega prirastka.
+
+\makebox[\textwidth][c]{
+\includegraphics[width=1.5\textwidth]{../slike/Sprememba.pdf}
+}
+
+
+\newpage
+
+Podatke za tretji graf sem vzela iz tabele ROJSTVO SMRTNOST.
+Tretji graf pa nam prikazuje število živorojenih otrok in število umrlih v Evropi po letih od 1960 do 2012. Vidimo, da se je število živorojenih skozi leta padalo, število umrlih pa je bilo približno enako skozi vsa leta, posledično je zato naravni prirastek v zadnjih letih nizek in kot je razvidno iz 2 grafa manjši od neto migracij.
+
+
+\makebox[\textwidth][c]{
+\includegraphics[width=1.5\textwidth]{../slike/RojstvoSmrtnost.pdf}
+}
+
+\newpage
+Podatke za četrti graf sem vzela iz tabele NARAVNI PRIRASTEK MIGRACIJE.
+Četrti graf prikazuje za vsako državo posebej, za koliko se je povečal oz zmanjšal naravni prirastek ter neto migracije za leto 2012 (do podatkov za pretekla leta nisem mogla priti, saj so nekatere države pred kratkim postala članice EU).
+Na podlagi leta 2012 sem tako države razdelila v naslednje skupine:
+
 % \includegraphics{../slike/naselja.pdf}
 
 \end{document}

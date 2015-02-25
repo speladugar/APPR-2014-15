@@ -111,3 +111,19 @@ uvoziRodnost_smrtnost_SLO <- function() {
 
 cat("Uvažam podatke o Rodnost_smrtnost_SLO...\n")
 Rodnost_smrtnost_SLO<-uvoziRodnost_smrtnost_SLO()
+
+#Uvoz tabele NARAVNI_PRIRASTEK_MIGRACIJE_EU:
+source("lib/xml.r")
+
+uvoziprirastek_migracijeEU <- function() {
+  return(read.table("podatki/Naravni_prirastek_migracijeEU.csv", sep = ";", as.is = TRUE, header = TRUE,
+                    
+                    fileEncoding = "Windows-1250"))
+}
+
+cat("Uvažam podatke o prirastek_migracijeEU...\n")
+prirastek_migracijeEU<-uvoziprirastek_migracijeEU()
+
+
+
+
