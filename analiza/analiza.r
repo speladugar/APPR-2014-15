@@ -115,7 +115,7 @@ p<- Rojstvo_smrtnost[1:53, 3]
 lines(Rojstvo_smrtnost[1:53,1], p, type="l", col="blue")
 
 #Graf Naravni_prirastek_migracije
-pdf("slike/Naravni_prirastek_migracije.pdf", width=6, height=4)
+pdf("slike/Naravniprirastekmigracije.pdf", width=6, height=4)
 barplot(apply(prirastek_migracije[2:36, 2:3], 1, c), beside = TRUE,
         names.arg=prirastek_migracije[2:36,1],las=2, ylim=c(-70, 70),
         xlab="imena držav", ylab="število v tisočih",
@@ -124,24 +124,26 @@ barplot(apply(prirastek_migracije[2:36, 2:3], 1, c), beside = TRUE,
 
 
 #Graf Naravni_prirastek_migracijeEU:
-pdf("slike/Naravni_prirastek_migracijeEU.pdf", width=6, height=4)
+pdf("slike/NaravniprirastekmigracijeEU.pdf", width=6, height=4)
 barplot(apply(prirastek_migracijeEU[2:6, 2:3], 1, c), beside = TRUE,
         names.arg=prirastek_migracijeEU[2:6,1],las=2, ylim=c(-200, 910),
          ylab="število v tisočih",
         main="Naravni prirastek in neto migracije za pet držav EU (posebej)",
         cex.names=0.6, col=c("pink", "yellow"))
-dev.off()
 
 
-#SLOVENIJA
-slovenija<-RodnostSLO[RodnostSLO$Regija=="SLOVENIJA",]
-plot(slovenija$Leto, slovenija$Vrstni.red.rojstva...SKUPAJ, xlab="Leto", ylab="število živorojenih v tisočih")
-title("Število živorojenih otrok v Sloveniji po letih od 2002-2013")
 
+# #SLOVENIJA
+# slovenija<-RodnostSLO[RodnostSLO$Regija=="SLOVENIJA",]
+# plot(slovenija$Leto, slovenija$Vrstni.red.rojstva...SKUPAJ, xlab="Leto", ylab="število živorojenih v tisočih")
+# title("Število živorojenih otrok v Sloveniji po letih od 2002-2013")
+
+#Napoved za Slovenijo
+pdf("slike/Stevilozivorojenih.pdf", width=6, height=4)
 leto<-Rodnost_smrtnost_SLO$Leto
 stzivorojenih<-Rodnost_smrtnost_SLO$Št.živorojenih 
 
-#graf
+
 plot(leto,stzivorojenih, xlim=c(2002,2020),ylim=c(17000,25000),
      xlab="Leto",ylab="Število živorojenih otrok",
      main="Napoved za število živorojenih otrok v Sloveniji",pch=20,col="lightblue",type="p",lwd=3.5)
@@ -162,5 +164,10 @@ legend("topleft", c("Linerana metoda", "Kvadratna metoda","Loess"),lty=c(1,1,1),
 #Ocenimo prileganje krivulj tako, da izračunamo vsote kvadratov razdalj od napovedanih do dejanskih vrednosti
 ostp<-sapply(list(linp, kvp, loep), function(x) sum(x$residuals^2))
 
+#ocenitev ostanka-manjši ostanek je bolj natančen
+sapply(list(linp, kvp, loep), function(x) sum(x$residuals^2))
+#8434860.1 5625253.3  590036.3
+#min(8434860.1, 5625253.3 , 590036.3)=590036.3
+#najbolj natančen je loess
 
-
+dev.off()

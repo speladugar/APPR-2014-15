@@ -137,7 +137,7 @@ Na drugem grafu je prikazana sprememba rasti prebivalstva po letih (rumena krivu
 \newpage
 
 Podatke za tretji graf sem vzela iz tabele ROJSTVO SMRTNOST.
-Tretji graf pa nam prikazuje število živorojenih otrok in število umrlih v Evropi po letih od 1960 do 2012. Vidimo, da se je število živorojenih skozi leta padalo, število umrlih pa je bilo približno enako skozi vsa leta, posledično je zato naravni prirastek v zadnjih letih nizek in kot je razvidno iz 2 grafa manjši od neto migracij.
+Tretji graf pa nam prikazuje število živorojenih otrok in število umrlih v Evropi po letih od 1960 do 2012. Vidimo, da se je število živorojenih skozi leta padalo, število umrlih pa je bilo približno enako skozi vsa leta, posledično je zato naravni prirastek v zadnjih letih nizek, a še vedno pozitiven, in kot je razvidno iz 2 grafa manjši od neto migracij.
 
 
 \makebox[\textwidth][c]{
@@ -145,10 +145,145 @@ Tretji graf pa nam prikazuje število živorojenih otrok in število umrlih v Ev
 }
 
 \newpage
-Podatke za četrti graf sem vzela iz tabele NARAVNI PRIRASTEK MIGRACIJE.
-Četrti graf prikazuje za vsako državo posebej, za koliko se je povečal oz zmanjšal naravni prirastek ter neto migracije za leto 2012 (do podatkov za pretekla leta nisem mogla priti, saj so nekatere države pred kratkim postala članice EU).
-Na podlagi leta 2012 sem tako države razdelila v naslednje skupine:
+Podatke za četrti in peti graf sem vzela iz tabele NARAVNI PRIRASTEK MIGRACIJE.
+
+Četrti in peti  graf prikazuje za vsako državo posebej, za koliko se je povečal oz zmanjšal naravni prirastek (roza stolpci) ter neto migracije(rumeni stolpci) za leto 2012 (do podatkov za pretekla leta nisem mogla priti, saj so nekatere države pred kratkim postala članice EU).
+Dva grafa sem naredila z namenom, da so grafi bolj berljivi, kajti države na drugem grafu imajo bistveno večje število živorojenih na leto, še posebej Turčija, zato sem jih predstavila posebej.
+
+
+\makebox[\textwidth][c]{
+\includegraphics[width=1.5\textwidth]{../slike/Naravniprirastekmigracije.pdf}
+}
+
+
+\makebox[\textwidth][c]{
+\includegraphics[width=1.5\textwidth]{../slike/NaravniprirastekmigracijeEU.pdf}
+}
+\newline
+\newline
+\newline
+Na podlagi leta 2012 sem tako države razdelila v naslednje skupine, ki so prikazana v tabelah:
+
+
+
+\begin{table} [h!]
+
+\begin{center}
+
+
+\begin{tabular}{|l| l| }
+
+
+\hline
+
+
+\textbf{Rast prebivalstva}&\textbf{Države članice EU} \\
+
+
+\hline
+
+
+\multicolumn{1}{|l|}{samo zarad pozitivnega naravnega prirastka:}&\multicolumn{1}{|p{8cm}|}{ Irska, Ciper, Islandija, Makedonija, Črna Gora, Turčija} \\
+
+
+\hline
+
+
+\multicolumn{1}{|l|}{več zaradi pozitivnega naravnega prirastka:}&\multicolumn{1}{|p{8cm}|}{Francija, Nizozemska, Slovenija,
+
+Združeno Kraljestvo}\\
+
+
+\hline
+
+
+\multicolumn{1}{|l|}{več zaradi pozitivnih neto migracij:}&\multicolumn{1}{|p{8cm}|}{Belgija, Češka, Danska, Luksemburg, Malta, Slovaška, Finska, Švedska, Lihtenštajn, Norveška, Švica}\\
+
+
+\hline
+
+
+\multicolumn{1}{|l|}{samo zaradi pozivinih neto migracij:}&\multicolumn{1}{|l|}{Nemčija, Italija, Avstrija}\\
+
+
+\hline
+
+
+\end{tabular}
+
+\end{center}
+
+\end{table}
+
+\newpage
+\begin{table} [h]
+
+\begin{tabular}{|l| l| }
+
+\hline
+
+\textbf{Padec prebivalstva}&\textbf{Države članice EU} \\
+
+
+\hline
+
+
+\multicolumn{1}{|l|}{samo zarad negativnega naravnega prirastka:}&\multicolumn{1}{|p{8cm}|}{ Madžarska, Romunija, Srbija} \\
+
+
+\hline
+
+
+\multicolumn{1}{|l|}{več zaradi negativnega naravnega prirastka:}&\multicolumn{1}{|p{8cm}|}{Bulgarija, Hrvaška}\\
+
+
+\hline
+
+
+\multicolumn{1}{|l|}{več zaradi negativnih neto migracij:}&\multicolumn{1}{|p{8cm}|}{Grčija, Estonija, Litva, Latvija Portugalska}\\
+
+
+\hline
+
+
+\multicolumn{1}{|l|}{samo zaradi pozivinih neto migracij:}&\multicolumn{1}{|l|}{Španija, Poljska}\\
+
+
+\hline
+
+
+
+\end{tabular}
+
+
+\end{table}
+
+
+
+Za konec sem se odločila, da naredim napoved glede števila živorojenih otrok v Sloveniji.
+
+Podatke za šesti graf pa sem vzela iz tabele RODNOST SMRTNOST SLO.
+Na šestem grafu sem se omejila na Slovenijo in prikazala koliko živorojenih otrok se je rodilo v posameznih letih od 2002 do 2013 in kako dobro se podatki prilegajo različnim funkcijam.
+Najprej sem iz tabele RODNOST SMRTNOST SLO pobrala leta in jih shranila v vektor leto, število živorojenih pa v stzivorojeni. Nato sem za te podatke narisala graf, kjer sem dejansko število živorojenih prikazala s svtlomodrimi pikami.
+Potem sem grafu dodala tri krivulje, ki se prilegajo podatkom.
+Linearni model linp sem na grafu označila z roza barvo, kvadratni model kvp pa z vijolično barvo. S pomočjo ukazov linpcoefficients sem dobila naslednjo enačbo premice: $$y= -968676.949 + 492.521x,$$ kjer je y število živorojenih otrok, in x leto.
+Na podoben način sem dobila tudi enačbo parabole: $$y=-4.588137e+01x^2+1.847062e+05x - 1.858726e+08,$$ kjer je enako kot prej, y število živorojenih otrok, x pa leto.
+
+Z oranžno barvo sem narisala še model loep, za katerega sem uporabila funkcijo  loes z lokalnim prileganjem. Os x, ki predstavlja leto, sem podajšala do leta 2020, do tam torej sega moja napoved. Izračunala sem tudi ostanek, ki je povedal da se najbolj prilega model  loess , najmanj pa linearni model.
+
+\makebox[\textwidth][c]{
+\includegraphics[width=1.5\textwidth]{../slike/Stevilozivorojenih.pdf}
+}
+
+
+
+% %(sapply(list(linp, kvp, loep), function(x) sum(x$residuals^2)),
+% % $8434860.1$,$5625253.3$,$590036.3$)
+
+Za konec lahko vidimo, da se je v Sloveniji število živorojenih otrok 2002 naprej povečevalo in sicer vse do leta 2010, potem pa je število rojstev malo upadlo, za padec števila rojstev bi bila lahko vzrok tudi gospodarska kriza. Vsekakor pa ima Slovenija pozitivni naravni prirastek in najverjetnje ga bo imela tudi v prihodnje.
+
 
 % \includegraphics{../slike/naselja.pdf}
+
 
 \end{document}
